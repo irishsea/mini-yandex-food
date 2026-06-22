@@ -10,6 +10,10 @@ java {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     // BOM Spring Boot
     implementation(platform("org.springframework.boot:spring-boot-dependencies:4.1.0"))

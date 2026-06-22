@@ -12,6 +12,10 @@ java {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation(project(":common-libs"))
 
