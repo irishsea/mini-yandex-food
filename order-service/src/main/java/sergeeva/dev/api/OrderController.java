@@ -20,8 +20,8 @@ public class OrderController {
 
     @PostMapping
     public @NonNull OrderDto create(@RequestBody CreateOrderRequestDto request) {
+        log.info("Created order, request:{}", request);
         OrderEntity order = orderProcessor.create(request);
-        log.info("Created order with id:{}", order.getId());
         return orderEntityMapper.toOrderDto(order);
     }
 

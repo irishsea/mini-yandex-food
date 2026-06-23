@@ -1,0 +1,40 @@
+package sergeeva.dev.domain;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "payments")
+public class PaymentEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    @Column(name = "order_id", nullable = false, unique = true)
+    private Long orderId;
+
+    @Column(name = "amount")
+    private BigDecimal amount;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "payment_status", nullable = false)
+    private PaymentStatus paymentStatus;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "payment_method", nullable = false)
+    private PaymentMethod paymentMethod;
+
+}
