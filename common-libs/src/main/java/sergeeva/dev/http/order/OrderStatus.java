@@ -1,4 +1,4 @@
-package sergeeva.dev.domain.db;
+package sergeeva.dev.http.order;
 
 public enum OrderStatus {
     PENDING_PAYMENT,

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import sergeeva.dev.domain.OrderProcessor;
 import sergeeva.dev.domain.db.OrderEntity;
 import sergeeva.dev.domain.db.OrderEntityMapper;
+import sergeeva.dev.http.order.CreateOrderRequestDto;
+import sergeeva.dev.http.order.OrderDto;
 
 @Slf4j
 @RestController
@@ -19,10 +21,10 @@ public class OrderController {
     private final OrderEntityMapper orderEntityMapper;
 
     @PostMapping
-    public @NonNull OrderDto create(@RequestBody CreateOrderRequestDto request) {
+    public @NonNull ResponseEntity<OrderDto> create(@RequestBody CreateOrderRequestDto request) {
         log.info("Created order, request:{}", request);
         OrderEntity order = orderProcessor.create(request);
-        return orderEntityMapper.toOrderDto(order);
+        return ResponseEntity.ok(orderEntityMapper.toOrderDto(order));
     }
 
     @GetMapping("{id}")
@@ -35,4 +37,11 @@ public class OrderController {
         return ResponseEntity.ok(orderEntityMapper.toOrderDto(order));
     }
 
+    @PostMapping("/{id}/pay")
+    public @NonNull ResponseEntity<OrderDto> payOrder(@PathVariable Long id,
+                                                      @RequestBody OrderPaymentRequest request) {
+        log.info("Make payment for order, id:{}, request:{}", id, request);
+        OrderEntity order = orderProcessor.processPayment(id, request);
+        return ResponseEntity.ok(orderEntityMapper.toOrderDto(order));
+    }
 }

@@ -1,14 +1,13 @@
-package sergeeva.dev.domain;
+package sergeeva.dev.domain.db;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import sergeeva.dev.http.payment.PaymentStatus;
 
 import java.math.BigDecimal;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -35,6 +34,6 @@ public class PaymentEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
-    private PaymentMethod paymentMethod;
+    private sergeeva.dev.http.payment.PaymentMethod paymentMethod;
 
 }

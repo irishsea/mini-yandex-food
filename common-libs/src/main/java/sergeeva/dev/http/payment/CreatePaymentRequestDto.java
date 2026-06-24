@@ -1,7 +1,6 @@
-package sergeeva.dev.api;
+package sergeeva.dev.http.payment;
 
 import lombok.Builder;
-import sergeeva.dev.domain.PaymentMethod;
 
 import java.math.BigDecimal;
 

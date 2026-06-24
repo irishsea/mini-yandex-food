@@ -1,11 +1,13 @@
-package sergeeva.dev.api;
+package sergeeva.dev.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import sergeeva.dev.domain.PaymentEntityMapper;
-import sergeeva.dev.domain.PaymentEntityRepository;
-import sergeeva.dev.domain.PaymentStatus;
+import sergeeva.dev.domain.db.PaymentEntityMapper;
+import sergeeva.dev.domain.db.PaymentEntityRepository;
+import sergeeva.dev.http.payment.PaymentStatus;
+import sergeeva.dev.http.payment.CreatePaymentRequestDto;
+import sergeeva.dev.http.payment.CreatePaymentResponseDto;
 
 @Slf4j
 @Service

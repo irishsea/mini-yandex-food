@@ -1,10 +1,10 @@
-package sergeeva.dev.domain;
+package sergeeva.dev.domain.db;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
-import sergeeva.dev.api.CreatePaymentRequestDto;
-import sergeeva.dev.api.CreatePaymentResponseDto;
+import sergeeva.dev.http.payment.CreatePaymentRequestDto;
+import sergeeva.dev.http.payment.CreatePaymentResponseDto;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,

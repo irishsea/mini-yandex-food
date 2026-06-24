@@ -1,4 +1,4 @@
-package sergeeva.dev.api;
+package sergeeva.dev.http.order;
 
 public record OrderItemRequestDto(
         Long itemId,

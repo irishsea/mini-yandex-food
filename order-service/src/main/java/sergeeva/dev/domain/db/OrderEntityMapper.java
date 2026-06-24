@@ -1,8 +1,8 @@
 package sergeeva.dev.domain.db;
 
 import org.mapstruct.*;
-import sergeeva.dev.api.CreateOrderRequestDto;
-import sergeeva.dev.api.OrderDto;
+import sergeeva.dev.http.order.CreateOrderRequestDto;
+import sergeeva.dev.http.order.OrderDto;
 
 @Mapper(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,

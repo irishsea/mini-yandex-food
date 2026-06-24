@@ -1,7 +1,4 @@
-package sergeeva.dev.api;
-
-import sergeeva.dev.domain.PaymentMethod;
-import sergeeva.dev.domain.PaymentStatus;
+package sergeeva.dev.http.payment;
 
 import java.math.BigDecimal;
 

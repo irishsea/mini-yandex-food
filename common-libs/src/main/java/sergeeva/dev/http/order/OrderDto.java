@@ -1,5 +1,4 @@
-package sergeeva.dev.api;
-import sergeeva.dev.domain.db.OrderStatus;
+package sergeeva.dev.http.order;
 
 import java.math.BigDecimal;
 import java.util.Set;

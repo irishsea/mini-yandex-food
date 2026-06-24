@@ -1,4 +1,4 @@
-package sergeeva.dev.domain;
+package sergeeva.dev.http.payment;
 
 public enum PaymentMethod {
     CARD,
